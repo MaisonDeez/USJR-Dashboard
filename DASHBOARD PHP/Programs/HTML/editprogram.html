@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Program</title>
+    <link rel="stylesheet" href="../CSS/editprogram.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JAVASCRIPT/editprogram.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Program Information</h2>
+        <form id="editProgramForm">
+            <div class="form-group">
+                <label for="progid">Program ID</label>
+                <input type="text" id="progid" name="progid" readonly>
+            </div>
+            <div class="form-group">
+                <label for="progfullname">Full Name</label>
+                <input type="text" id="progfullname" name="progfullname">
+            </div>
+            <div class="form-group">
+                <label for="progshortname">Short Name</label>
+                <input type="text" id="progshortname" name="progshortname">
+            </div>
+            <div class="form-group">
+                <label for="progcollid">College</label>
+                <select id="progcollid" name="progcollid"></select>
+            </div>
+            <div class="form-group">
+                <label for="progcolldeptid">Department</label>
+                <select id="progcolldeptid" name="progcolldeptid"></select>
+            </div>
+            <div class="button-group">
+                <button type="button" class="save" onclick="showConfirmationModal()">Save Changes</button>
+                <button type="button" class="cancel" onclick="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to proceed with the changes?</p>
+            <button onclick="confirmEdit()">Yes</button>
+            <button onclick="closeConfirmationModal()">No</button>
+        </div>
+    </div>
+
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <p id="errorMessage"></p>
+            <button onclick="closeErrorModal()">Close</button>
+        </div>
+    </div>
+</body>
+</html>

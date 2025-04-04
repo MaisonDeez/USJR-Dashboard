@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete College Information</title>
+    <link rel="stylesheet" href="../CSS/deletecollege.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JAVASCRIPT/deletecollege.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Delete College Information</h2>
+        <form id="deleteForm" method="POST">
+            <div class="form-group">
+                <label for="collid">College ID</label>
+                <input type="text" id="collid" name="collid" readonly>
+            </div>
+            <div class="form-group">
+                <label for="collfullname">Full College Name</label>
+                <input type="text" id="collfullname" name="collfullname" readonly>
+            </div>
+            <div class="form-group">
+                <label for="collshortname">Short College Name</label>
+                <input type="text" id="collshortname" name="collshortname" readonly>
+            </div>
+            <div class="button-group">
+                <button type="button" class="delete" onclick="showModal()">Delete</button>
+                <button type="button" class="cancel" onclick="window.location.href='../HTML/colleges.html'">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Danger Warning!!!</p>
+            <p>You are about to permanently erase this record from the College Information table. Are you totally sure that you want to proceed with this operation?</p>
+            <div class="button-group">
+                <button type="button" class="delete" onclick="deleteCollege()">Proceed</button>
+                <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

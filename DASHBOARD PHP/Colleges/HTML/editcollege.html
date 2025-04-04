@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit College</title>
+    <link rel="stylesheet" href="../CSS/editcollege.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JAVASCRIPT/editcollege.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit College Information</h2>
+        <form id="editCollegeForm">
+            <div class="form-group">
+                <label for="college_id">College ID</label>
+                <input type="text" id="college_id" name="college_id" readonly>
+            </div>
+            <div class="form-group">
+                <label for="college_name">College Name</label>
+                <input type="text" id="college_name" name="college_name" required>
+            </div>
+            <div class="form-group">
+                <label for="college_shortname">College Short Name</label>
+                <input type="text" id="college_shortname" name="college_shortname" required>
+            </div>
+            <div class="button-group">
+                <button type="button" class="save" onclick="showConfirmationModal()">Save Changes</button>
+                <button type="button" class="cancel" onclick="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to proceed with the changes?</p>
+            <button onclick="confirmEdit()">Yes</button>
+            <button onclick="closeConfirmationModal()">No</button>
+        </div>
+    </div>
+
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <p id="errorMessage"></p>
+            <button onclick="closeErrorModal()">Close</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Department</title>
+    <link rel="stylesheet" href="../CSS/editdepartment.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JAVASCRIPT/editdepartment.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Department Information</h2>
+        <form id="editDepartmentForm">
+            <div class="form-group">
+                <label for="dept_id">Department ID</label>
+                <input type="text" id="dept_id" name="dept_id" readonly>
+            </div>
+            <div class="form-group">
+                <label for="deptfullname">Full Department Name</label>
+                <input type="text" id="deptfullname" name="deptfullname">
+            </div>
+            <div class="form-group">
+                <label for="deptshortname">Short Department Name</label>
+                <input type="text" id="deptshortname" name="deptshortname">
+            </div>
+            <div class="form-group">
+                <label for="deptcollid">College</label>
+                <select id="deptcollid" name="deptcollid"></select>
+            </div>
+            <div class="button-group">
+                <button type="button" class="save" onclick="showConfirmationModal()">Save Changes</button>
+                <button type="button" class="cancel" onclick="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to proceed with the changes?</p>
+            <button onclick="confirmEdit()">Yes</button>
+            <button onclick="closeConfirmationModal()">No</button>
+        </div>
+    </div>
+
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <p id="errorMessage"></p>
+            <button onclick="closeErrorModal()">Close</button>
+        </div>
+    </div>
+</body>
+</html>

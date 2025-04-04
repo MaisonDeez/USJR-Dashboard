@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add College</title>
+    <link rel="stylesheet" href="../CSS/addcollege.css">
+    <script src="../JAVASCRIPT/adddepartment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>College Information Data Entry</h2>
+        <form id="collegeForm">
+            <div class="form-group">
+                <label for="collid">College ID:</label>
+                <input type="text" name="collid" id="collid" required>
+            </div>
+
+            <div class="form-group">
+                <label for="collfullname">Full College Name:</label>
+                <input type="text" name="collfullname" id="collfullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="collshortname">Short College Name:</label>
+                <input type="text" name="collshortname" id="collshortname">
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="save" onclick="showConfirmationModal()">Add College</button>
+                <button type="button" name="clear" class="clear" onclick="clearForm()">Clear</button>
+                <button type="button" name="cancel" class="cancel" onclick="cancelForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to proceed with the changes?</p>
+            <button onclick="confirmSubmission()">Yes</button>
+            <button onclick="closeModal('confirmationModal')">No</button>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <p id="errorMessage">Data Entry Status: There are some invalid input values.</p>
+            <button onclick="closeModal('errorModal')">OK</button>
+        </div>
+    </div> 
+
+    <script src="../JAVASCRIPT/addcollege.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Department Information</title>
+    <link rel="stylesheet" href="../CSS/deletedepartment.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JAVASCRIPT/deletedepartment.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Delete Department Information</h2>
+        <form id="deleteDepartmentForm" action="../PHP/deletedepartment.php" method="POST">
+            <div class="form-group">
+                <label for="deptid">Department ID</label>
+                <input type="text" id="deptid" name="deptid" readonly>
+            </div>
+            <div class="form-group">
+                <label for="deptfullname">Full Department Name</label>
+                <input type="text" id="deptfullname" name="deptfullname" readonly>
+            </div>
+            <div class="form-group">
+                <label for="deptshortname">Short Department Name</label>
+                <input type="text" id="deptshortname" name="deptshortname" readonly>
+            </div>
+            <div class="form-group">
+                <label for="collegeName">College Name</label>
+                <input type="text" id="collegeName" name="collegeName" readonly>
+            </div>
+            <div class="button-group">
+                <button type="button" class="delete" onclick="showModal()">Delete</button>
+                <button type="button" class="cancel" onclick="window.location.href='departments.html'">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Danger Warning!!!</p>
+            <p>You are about to permanently erase this record from the Department Information table. Are you totally sure that you want to proceed with this operation?</p>
+            <div class="button-group">
+                <button type="submit" form="deleteDepartmentForm" class="delete" name="proceed_delete">Proceed</button>
+                <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

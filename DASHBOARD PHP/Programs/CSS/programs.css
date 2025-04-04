@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.program-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ccc;
+}
+
+.program-header .left {
+    display: flex;
+    align-items: center;
+}
+
+.program-header .right {
+    display: flex;
+    align-items: center;
+}
+
+.program-header button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.program-header .addprogram {
+    background-color: blue;
+    color: white;
+}
+
+.program-header .logout {
+    background-color: rgb(255, 200, 0);
+    color: white;
+    margin-left: 10px;
+}
+
+.program-header .go-dashboard-btn {
+    background-color: red;
+    color: white;
+    margin-right: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; 
+    margin: 20px 0;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(12, 78, 21);
+    color: white;
+}
+
+.action-img {
+    width: 30px; 
+    height: 30px;
+    cursor: pointer;
+}
+
+.bi-pencil-square {
+    font-size: 40px;
+    color: green;
+}
+
+.bi-trash-fill{
+    font-size: 40px;
+    color: red;
+}
+
+th, td {
+    border: 1px solid black !important;
+    padding: 10px;
+}
+tbody {
+    border: 1px solid black !important;
+    border-width: 1px !important;
+}
